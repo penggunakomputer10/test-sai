@@ -9,7 +9,7 @@
 @section('content')
 <section class="content">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">

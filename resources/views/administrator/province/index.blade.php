@@ -9,7 +9,7 @@
 @section('content')
 <section class="content">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -27,6 +27,8 @@
                                 <tr>
                                     <th width="2">No</th>
                                     <th>Province Name</th>
+                                    <th>Count City</th>
+                                    <th>Created At</th>
                                     <th width="150">Action</th>
                                 </tr>
                             </thead>
@@ -55,7 +57,7 @@
 var datatable = $('#table').DataTable({
     "processing": true,
     "serverSide": true,
-    "order": [[ 2, "DESC" ]],
+    "order": [[ 3, "DESC" ]],
     "ajax":{
                 "url": "{{ route('province.table') }}",
                 "dataType": "json",
@@ -66,10 +68,13 @@ var datatable = $('#table').DataTable({
         { "data": "angka" },
 
         { "data": "name" },
+        { "data": "count_city" },
+        { "data": "created_at" },
+
         { "data": "action" }
     ],
     "columnDefs": [ {
-        "targets": [0,2],
+        "targets": [0,2,4],
         "orderable": false
     }]
 

@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 use App\Models\Province;
+use Carbon\Carbon;
 class ProvinceRepository implements BaseRepositoryInterface{
 
     protected $model;
@@ -48,7 +49,8 @@ class ProvinceRepository implements BaseRepositoryInterface{
         $columns = array(
             0 =>'id',
             1 =>'name',
-            2 => 'created_at'
+            2 => 'count_city',
+            3 => 'created_at'
         );
 
         $totalData = $this->model->count();
@@ -89,6 +91,8 @@ class ProvinceRepository implements BaseRepositoryInterface{
                 $nestedData['angka'] = $angka;
                 $nestedData['id'] = $u->id;
                 $nestedData['name'] = $u->name;
+                $nestedData['count_city'] = $u->cities->count();
+                $nestedData['created_at'] = Carbon::parse($u->created_at)->format('Y-m-d H:i:s');
                 $nestedData['action'] = $edit." ".$delete;
                 $data[] = $nestedData;
 
