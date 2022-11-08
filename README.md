@@ -1,7 +1,10 @@
-# Aplikasi Test SAI Menggunakan Laravel 9
+# Aplikasi Test SAI
 - PHP Version Required 8
 
-## Installation Instruction
+## Framework / Liblary Yang Digunakan
+* Laravel Framework 9.38.0
+
+## Panduan Installasi
 ```bash
 git clone https://github.com/penggunakomputer10/test-sai.git
 composer install
