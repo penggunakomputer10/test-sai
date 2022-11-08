@@ -3,6 +3,11 @@
 
 ## Framework / Liblary Yang Digunakan
 * Laravel Framework 9.38.0
+* Admin Lte 
+* Bootstrap
+* Sweetalert
+* Toastrjs
+* Jquery
 
 ## Panduan Installasi
 ```bash
