@@ -131,6 +131,39 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-4">
+                        <h5>City</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="view_city" name="view_city" value="view_city" {{ $role->hasPermissionTo('view_city') ? 'checked' : ''}}>
+                                <label for="view_city" class="custom-control-label">View City</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="add_city" name="add_city" value="add_city" {{ $role->hasPermissionTo('add_city') ? 'checked' : ''}}>
+                                <label for="add_city" class="custom-control-label">Add City</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="edit_city" name="edit_city" value="edit_city" {{ $role->hasPermissionTo('edit_city') ? 'checked' : ''}}>
+                                <label for="edit_city" class="custom-control-label">Edit City</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="delete_city" name="delete_city" value="delete_city" {{ $role->hasPermissionTo('delete_city') ? 'checked' : ''}}>
+                                <label for="delete_city" class="custom-control-label">Delete City</label>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
                         <h5>General Setting</h5>
                     </div>
                     

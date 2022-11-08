@@ -6,6 +6,8 @@ use App\Http\Controllers\CMS\UserGroupController;
 use App\Http\Controllers\CMS\UserController;
 use App\Http\Controllers\CMS\GenneralSettingController;
 use App\Http\Controllers\CMS\ProvinceController;
+use App\Http\Controllers\CMS\CityController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +55,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'administrator'], function (
     Route::resource('/province', ProvinceController::class);
     Route::post('/table/province',[ProvinceController::class, 'table'])->name('province.table');
     Route::get('/select2/province',[ProvinceController::class, 'select2'])->name('province.select2');
+    
+    Route::resource('/city', cityController::class);
+    Route::post('/table/city',[cityController::class, 'table'])->name('city.table');
+    Route::get('/select2/city',[cityController::class, 'select2'])->name('city.select2');
 
 
 

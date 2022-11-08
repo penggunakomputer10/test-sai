@@ -33,6 +33,10 @@ class SetGroupPermission extends Seeder
             'add_province',
             'edit_province',
             'delete_province',
+            'view_city',
+            'add_city',
+            'edit_city',
+            'delete_city',
             ]
         );
     }
