@@ -8,6 +8,7 @@
 * Sweetalert
 * Toastrjs
 * Jquery
+* Font Awesome
 
 ## Panduan Installasi
 ```bash
