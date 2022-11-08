@@ -1,0 +1,69 @@
+[
+    {
+        "name": "Dashboard",
+        "permission_name":[],
+        "url":"/administrator/dashboard",
+        "icon":"fas fa-tachometer-alt",
+        "urlselect": ["dashboard"],
+        "submenu":[]
+    },
+    {
+        "name": "My Profile",
+        "permission_name":[],
+        "url":"/administrator/my_profile",
+        "icon":"fas fa-user-tie",
+        "urlselect": ["my_profile"],
+        "submenu":[]
+    },
+    {
+        "name": "User Management",
+        "permission_name":[],
+        "url":"#",
+        "icon":"fas fa-user-cog",
+        "urlselect": ["user_group","users"],
+        "submenu":[
+            {
+                "name": "User",
+                "permission_name":[],
+                "url":"/administrator/users",
+                "urlselect": ["users"]
+            },
+            {
+                "name": "User Group",
+                "permission_name":[],
+                "url":"/administrator/user_group",
+                "urlselect": ["user_group"]
+            }
+        ]
+    },
+    {
+        "name": "Location",
+        "permission_name":[],
+        "url":"#",
+        "icon":"fas fa-map-marked",
+        "urlselect": ["province","city"],
+        "submenu":[
+            {
+                "name": "Province",
+                "permission_name":[],
+                "url":"/administrator/province",
+                "urlselect": ["province"]
+            },
+            {
+                "name": "City",
+                "permission_name":[],
+                "url":"/administrator/city",
+                "urlselect": ["city"]
+            }
+        ]
+    },
+    {
+        "name": "General Setting",
+        "permission_name":[],
+        "url":"/administrator/setting/general",
+        "icon":"fas fa-cogs",
+        "urlselect": ["general"],
+        "submenu":[]
+    }
+]
+
