@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(GeneralSettingPermissionSeeder::class);
         $this->call(ProvincePermissionSeeder::class);
         $this->call(CityPermissionSeeder::class);
+        $this->call(VaccincePermissionSeeder::class);
 
 
 

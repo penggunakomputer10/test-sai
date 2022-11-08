@@ -37,6 +37,10 @@ class SetGroupPermission extends Seeder
             'add_city',
             'edit_city',
             'delete_city',
+            'view_vaccine',
+            'add_vaccine',
+            'edit_vaccine',
+            'delete_vaccine',
             ]
         );
     }

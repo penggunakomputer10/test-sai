@@ -7,6 +7,8 @@ use App\Http\Controllers\CMS\UserController;
 use App\Http\Controllers\CMS\GenneralSettingController;
 use App\Http\Controllers\CMS\ProvinceController;
 use App\Http\Controllers\CMS\CityController;
+use App\Http\Controllers\CMS\VaccineController;
+
 
 
 /*
@@ -59,6 +61,10 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'administrator'], function (
     Route::resource('/city', cityController::class);
     Route::post('/table/city',[cityController::class, 'table'])->name('city.table');
     Route::get('/select2/city',[cityController::class, 'select2'])->name('city.select2');
+
+    Route::resource('/vaccine', VaccineController::class);
+    Route::post('/table/vaccine',[VaccineController::class, 'table'])->name('vaccine.table');
+    Route::get('/select2/vaccine',[VaccineController::class, 'select2'])->name('vaccine.select2');
 
 
 

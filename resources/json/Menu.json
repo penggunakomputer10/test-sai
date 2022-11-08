@@ -58,6 +58,14 @@
         ]
     },
     {
+        "name": "Vaccine",
+        "permission_name":[],
+        "url":"/administrator/vaccine",
+        "icon":"fas fa-briefcase-medical",
+        "urlselect": ["vaccine"],
+        "submenu":[]
+    },
+    {
         "name": "General Setting",
         "permission_name":[],
         "url":"/administrator/setting/general",

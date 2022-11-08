@@ -164,6 +164,39 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-4">
+                        <h5>Vaccine</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="view_vaccine" name="view_vaccine" value="view_vaccine" {{ $role->hasPermissionTo('view_vaccine') ? 'checked' : ''}}>
+                                <label for="view_vaccine" class="custom-control-label">View Vaccine</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="add_vaccine" name="add_vaccine" value="add_vaccine" {{ $role->hasPermissionTo('add_vaccine') ? 'checked' : ''}}>
+                                <label for="add_vaccine" class="custom-control-label">Add Vaccine</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="edit_vaccine" name="edit_vaccine" value="edit_vaccine" {{ $role->hasPermissionTo('edit_vaccine') ? 'checked' : ''}}>
+                                <label for="edit_vaccine" class="custom-control-label">Edit Vaccine</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="delete_vaccine" name="delete_vaccine" value="delete_vaccine" {{ $role->hasPermissionTo('delete_vaccine') ? 'checked' : ''}}>
+                                <label for="delete_vaccine" class="custom-control-label">Delete Vaccine</label>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
                         <h5>General Setting</h5>
                     </div>
                     
