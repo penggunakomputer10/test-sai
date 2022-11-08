@@ -6,5 +6,6 @@
 git clone https://github.com/penggunakomputer10/test-sai.git
 composer install
 cp .env.example .env | Konfigurasi database
+php artisan key:generate
 php artisan migrate:fresh --seed
 ```
