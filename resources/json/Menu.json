@@ -1,7 +1,7 @@
 [
     {
         "name": "Dashboard",
-        "permission_name":[],
+        "permissions":["view_dashboard"],
         "url":"/administrator/dashboard",
         "icon":"fas fa-tachometer-alt",
         "urlselect": ["dashboard"],
@@ -9,7 +9,7 @@
     },
     {
         "name": "My Profile",
-        "permission_name":[],
+        "permissions":[],
         "url":"/administrator/my_profile",
         "icon":"fas fa-user-tie",
         "urlselect": ["my_profile"],
@@ -17,20 +17,20 @@
     },
     {
         "name": "User Management",
-        "permission_name":[],
+        "permissions":["view_user","view_user_group"],
         "url":"#",
         "icon":"fas fa-user-cog",
         "urlselect": ["user_group","users"],
         "submenu":[
             {
                 "name": "User",
-                "permission_name":[],
+                "permissions":["view_user"],
                 "url":"/administrator/users",
                 "urlselect": ["users"]
             },
             {
                 "name": "User Group",
-                "permission_name":[],
+                "permissions":["view_user_group"],
                 "url":"/administrator/user_group",
                 "urlselect": ["user_group"]
             }
@@ -38,20 +38,20 @@
     },
     {
         "name": "Location",
-        "permission_name":[],
+        "permissions":["view_province","view_city"],
         "url":"#",
         "icon":"fas fa-map-marked",
         "urlselect": ["province","city"],
         "submenu":[
             {
                 "name": "Province",
-                "permission_name":[],
+                "permissions":["view_province"],
                 "url":"/administrator/province",
                 "urlselect": ["province"]
             },
             {
                 "name": "City",
-                "permission_name":[],
+                "permissions":["view_city"],
                 "url":"/administrator/city",
                 "urlselect": ["city"]
             }
@@ -59,7 +59,7 @@
     },
     {
         "name": "Vaccine",
-        "permission_name":[],
+        "permissions":["view_vaccine"],
         "url":"/administrator/vaccine",
         "icon":"fas fa-briefcase-medical",
         "urlselect": ["vaccine"],
@@ -67,7 +67,7 @@
     },
     {
         "name": "Faskes",
-        "permission_name":[],
+        "permissions":["view_faskes"],
         "url":"/administrator/faskes",
         "icon":"fas fa-hospital",
         "urlselect": ["faskes"],
@@ -75,7 +75,7 @@
     },
     {
         "name": "General Setting",
-        "permission_name":[],
+        "permissions":["general_setting"],
         "url":"/administrator/setting/general",
         "icon":"fas fa-cogs",
         "urlselect": ["general"],

@@ -36,29 +36,33 @@
                with font-awesome or any other icon font library -->
           
           @foreach(\Helper::sideMenu() as $menu)
-            <li class="nav-item @if(count($menu->submenu) > 0) @if(count(array_intersect(Helper::path_url(),$menu->urlselect)) > 0) menu-open @endif @endif">
-              <a href="{{$menu->url}}" class="nav-link @if(count(array_intersect(Helper::path_url(),$menu->urlselect)) > 0) active @endif">
-                <i class="nav-icon {{$menu->icon}}"></i>
-                <p>
-                  {{$menu->name}}
-                  @if(count($menu->submenu) > 0)
-                    <i class="right fas fa-angle-left"></i>
+            @if(auth()->user()->hasAnyPermission($menu->permissions) OR $menu->name == 'My Profile')
+              <li class="nav-item @if(count($menu->submenu) > 0) @if(count(array_intersect(Helper::path_url(),$menu->urlselect)) > 0) menu-open @endif @endif">
+                <a href="{{$menu->url}}" class="nav-link @if(count(array_intersect(Helper::path_url(),$menu->urlselect)) > 0) active @endif">
+                  <i class="nav-icon {{$menu->icon}}"></i>
+                  <p>
+                    {{$menu->name}}
+                    @if(count($menu->submenu) > 0)
+                      <i class="right fas fa-angle-left"></i>
+                    @endif
+                  </p>
+                </a>
+                @if(count($menu->submenu) > 0)
+                <ul class="nav nav-treeview">
+                  @foreach($menu->submenu as $submenu)
+                  @if(auth()->user()->hasAnyPermission($submenu->permissions))
+                    <li class="nav-item">
+                      <a href="{{$submenu->url}}" class="nav-link @if(count(array_intersect(Helper::path_url(),$submenu->urlselect)) > 0) active @endif">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>{{$submenu->name}}</p>
+                      </a>
+                    </li>
                   @endif
-                </p>
-              </a>
-              @if(count($menu->submenu) > 0)
-              <ul class="nav nav-treeview">
-                @foreach($menu->submenu as $submenu)
-                <li class="nav-item">
-                  <a href="{{$submenu->url}}" class="nav-link @if(count(array_intersect(Helper::path_url(),$submenu->urlselect)) > 0) active @endif">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>{{$submenu->name}}</p>
-                  </a>
-                </li>
-                @endforeach
-              </ul>
-              @endif
-            </li>
+                  @endforeach
+                </ul>
+                @endif
+              </li>
+            @endif
           @endforeach
 
         </ul>
