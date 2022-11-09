@@ -45,6 +45,8 @@ class SetGroupPermission extends Seeder
             'add_faskes',
             'edit_faskes',
             'delete_faskes',
+            'view_report',
+
             ]
         );
     }

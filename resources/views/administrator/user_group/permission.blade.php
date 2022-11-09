@@ -230,6 +230,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-4">
+                        <h5>Report</h5>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="view_report" name="view_report" value="view_report" {{ $role->hasPermissionTo('view_report') ? 'checked' : ''}}>
+                                <label for="view_report" class="custom-control-label">Report</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
                         <h5>General Setting</h5>
                     </div>
                     

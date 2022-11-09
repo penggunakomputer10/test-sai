@@ -74,6 +74,14 @@
         "submenu":[]
     },
     {
+        "name": "Report",
+        "permissions":["view_report"],
+        "url":"/administrator/report",
+        "icon":"fas fa-file-code",
+        "urlselect": ["report"],
+        "submenu":[]
+    },
+    {
         "name": "General Setting",
         "permissions":["general_setting"],
         "url":"/administrator/setting/general",
@@ -81,5 +89,6 @@
         "urlselect": ["general"],
         "submenu":[]
     }
+    
 ]
 
