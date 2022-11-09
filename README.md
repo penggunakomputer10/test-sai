@@ -23,4 +23,7 @@ php artisan migrate:fresh --seed
 Link : https://sai.netsicku.com
 User : admin@mail.com
 Pass : admin123
+
+User : user@mail.com
+Pass : user123
 ```
