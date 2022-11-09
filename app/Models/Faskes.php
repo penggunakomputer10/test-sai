@@ -23,4 +23,9 @@ class Faskes extends Model
     {
         return $this->belongsToMany(Vaccine::class,'vaccine_faskes','faskes_id','vaccine_id')->select('*');
     }
+
+    public function data_vaccines()
+    {
+        return $this->belongsToMany(Vaccine::class,'vaccine_faskes','faskes_id','vaccine_id')->select('vaccines.id as id', 'vaccines.name as name', 'quota');
+    }
 }

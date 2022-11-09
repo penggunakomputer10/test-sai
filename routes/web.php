@@ -9,6 +9,8 @@ use App\Http\Controllers\CMS\ProvinceController;
 use App\Http\Controllers\CMS\CityController;
 use App\Http\Controllers\CMS\VaccineController;
 use App\Http\Controllers\CMS\FaskesController;
+use App\Http\Controllers\CMS\ReportController;
+
 
 
 
@@ -70,6 +72,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'administrator'], function (
     Route::resource('/faskes', FaskesController::class);
     Route::post('/table/faskes',[FaskesController::class, 'table'])->name('faskes.table');
     Route::get('/row/faskes',[FaskesController::class, 'row'])->name('faskes.row');
+
+    Route::get('/report',[ReportController::class, 'index'])->name('report.index');
+
 
 
 

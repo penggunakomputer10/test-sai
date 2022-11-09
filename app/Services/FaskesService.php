@@ -99,6 +99,10 @@ class FaskesService implements BaseServiceInterface{
         return $this->faskesRepository->dashboard();
     }
 
+    public function getReport($request){
+        return $this->faskesRepository->getReport($request);
+    }
+
   
 
   

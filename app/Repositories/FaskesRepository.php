@@ -4,6 +4,8 @@ namespace App\Repositories;
 use App\Models\Faskes;
 use App\Models\VaccineFaskes;
 use Carbon\Carbon;
+use App\Helpers\Helper;
+
 use DB;
 class FaskesRepository implements BaseRepositoryInterface{
 
@@ -203,5 +205,73 @@ class FaskesRepository implements BaseRepositoryInterface{
 
         return $result;
     }
+
+    public function getReport($request){
+    
+        
+        $limit = ($request->length) ? $request->length : 10;
+        $start = ($request->start) ? $request->start : 0;
+        
+        $vaccines = $this->model;
+
+        if (!empty($request->search)) {
+            $search = $request->search['value']; 
+            $vaccines =  $vaccines->where('name', 'LIKE',"%{$search}%");
+
+        }
+
+        if($request->province){
+            $vaccines =  $vaccines->where('province_id',$request->province);
+        }
+
+        if($request->city){
+            $vaccines =  $vaccines->where('city_id',$request->city);
+        }
+
+        $vaccines = $vaccines->offset($start)
+            ->limit($limit)
+            ->get();
+
+        $totalData = $vaccines->count();
+        $totalFiltered = $vaccines->count(); 
+
+
+        $data = array();
+
+        if(!empty($vaccines)){
+            $angka =$start+1;
+            foreach ($vaccines as $u){
+                $vaccines = '';
+                foreach ($u->vaccines as $key => $v) {
+                    $vaccines .= $v->name.' | Quota : '.$v->quota.'<br>';
+                }
+                $nestedData['angka'] = $angka;
+                $nestedData['id'] = $u->id;
+                $nestedData['name'] = $u->name;
+                $nestedData['type'] = $u->type;
+                $nestedData['province'] = @$u->province->name;
+                $nestedData['city'] = @$u->city->name;
+
+
+                $nestedData['vaccines'] = $vaccines;
+
+
+                $data[] = $nestedData;
+
+                $angka++;
+            }
+        }
+
+        $json_data = array(
+            "draw"            => intval($request->draw),  
+            "recordsTotal"    => intval($totalData),  
+            "recordsFiltered" => intval($totalFiltered), 
+            "data"            => $data   
+            );
+
+        return $json_data;
+    }
+
+
 
 }

@@ -30,17 +30,30 @@ class Helper {
 
     }
 
-    public function resultOutPut($success, $code,$message,$errors = null,$data =null){
-        $result = [
-            'success'   => $success,
-            'code'      => $code,
-            'message'   => $message,
-            'errors'    => $errors,
-            'data'      => $data,
+    public static function api_pagination($format_data, $pagging){
+        $datapagging = [
+            'pagination'       => [
+                'total'         => $pagging->total(),
+                'count'         => $pagging->count(),
+                'per_page'      => $pagging->perPage(),
+                'current_page'  => $pagging->currentPage(),
+                'total_pages'   => $pagging->lastPage(),
+                'links'         => [
+                    'previous'  => $pagging->previousPageUrl(),
+                    'next'      => $pagging->nextPageUrl()
+                ]
+            ]
         ];
 
-        return $result;
+        return [
+            'data' => $format_data,
+            'meta' => $datapagging,
+            'draw'    => (request()->draw) ? request()->draw : 1,
+            "recordsTotal" => $pagging->total(),
+            "recordsFiltered" => $pagging->total(),
+        ];
     }
+
 
     public static function getGeneralSetting($key){
         $data = GeneralSetting::where('key',$key)->first();
