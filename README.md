@@ -18,3 +18,7 @@ cp .env.example .env #Konfigurasi database
 php artisan key:generate
 php artisan migrate:fresh --seed
 ```
+## Demo
+Link : https://sai.netsicku.com
+User : admin@mail.com
+Pass : admin123
