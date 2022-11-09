@@ -197,6 +197,39 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-4">
+                        <h5>Faskes</h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="view_faskes" name="view_faskes" value="view_faskes" {{ $role->hasPermissionTo('view_faskes') ? 'checked' : ''}}>
+                                <label for="view_faskes" class="custom-control-label">View Faskes</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="add_faskes" name="add_faskes" value="add_faskes" {{ $role->hasPermissionTo('add_faskes') ? 'checked' : ''}}>
+                                <label for="add_faskes" class="custom-control-label">Add Faskes</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="edit_faskes" name="edit_faskes" value="edit_faskes" {{ $role->hasPermissionTo('edit_faskes') ? 'checked' : ''}}>
+                                <label for="edit_faskes" class="custom-control-label">Edit Faskes</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="delete_faskes" name="delete_faskes" value="delete_faskes" {{ $role->hasPermissionTo('delete_faskes') ? 'checked' : ''}}>
+                                <label for="delete_faskes" class="custom-control-label">Delete Faskes</label>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
                         <h5>General Setting</h5>
                     </div>
                     
