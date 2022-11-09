@@ -8,8 +8,11 @@ use DB;
 class FaskesRepository implements BaseRepositoryInterface{
 
     protected $model;
+    public $type;
     public function __construct(Faskes $model){
         $this->model = $model;
+        $this->type = ['rumah sakit','puskesmas','klinik'];
+
     }
 
     public function getData($order='DESC',$pagination=null){
@@ -32,6 +35,8 @@ class FaskesRepository implements BaseRepositoryInterface{
             $model->city_id            = $data['city_id'];
             $model->telephone          = $data['telephone'];
             $model->address            = $data['address'];
+            $model->type            = $data['type'];
+
     
             $model->save();
             if($model->save()){
@@ -180,6 +185,20 @@ class FaskesRepository implements BaseRepositoryInterface{
 
         return $json_data;
 
+    }
+
+    public function dashboard(){
+        $result = [];
+
+        foreach ($this->type as $key => $t) {
+            $result['data'][$key]['faskes_name'] = $t;
+            $result['data'][$key]['total'] = $this->model->where('type',$t)->count();
+
+
+        }
+        $result['total'] = $this->model->count();
+
+        return $result;
     }
 
 }

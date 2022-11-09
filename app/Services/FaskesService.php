@@ -95,6 +95,10 @@ class FaskesService implements BaseServiceInterface{
         return $this->faskesRepository->table($data);
     }
 
+    public function dashboard(){
+        return $this->faskesRepository->dashboard();
+    }
+
   
 
   
