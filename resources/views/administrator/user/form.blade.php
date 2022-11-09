@@ -1,7 +1,17 @@
 <!-- Select2 -->
 <link rel="stylesheet" href="{{asset('adminlte/plugins/select2/css/select2.min.css')}}">
 <!-- <link rel="stylesheet" href="{{asset('adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}"> -->
+<style>
+        .select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 37px;
+    user-select: none;
+    -webkit-user-select: none;
 
+}
+</style>
 <form action="{{($data==null)? route('users.store') : route('users.update',$data->id)}}" id="form-modal" title="User" method="POST" enctype="multipart/form-data">
     
     @csrf
@@ -61,7 +71,6 @@ $('#user_group').select2({
     placeholder: "Choose User Group...",
     // minimumInputLength: 2,
     // dropdownParent: $('#modal1'),
-    theme: "classic",
     ajax: {
         url: "{{route('user_group.select2')}}",
         dataType: 'json',
