@@ -26,7 +26,7 @@ use App\Http\Controllers\CMS\ReportController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::prefix('administrator')->group(function () {
