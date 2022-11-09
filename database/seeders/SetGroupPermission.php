@@ -41,6 +41,10 @@ class SetGroupPermission extends Seeder
             'add_vaccine',
             'edit_vaccine',
             'delete_vaccine',
+            'view_faskes',
+            'add_faskes',
+            'edit_faskes',
+            'delete_faskes',
             ]
         );
     }

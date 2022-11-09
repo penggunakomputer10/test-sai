@@ -118,12 +118,20 @@ class CityRepository implements BaseRepositoryInterface{
 
     public function select2($request){
         $search = $request->search;
+        $province_id = $request->province_id;
 
-        if($search == ''){
-            $citys =$this->model->orderby('name','asc')->select('id','name')->limit(10)->get();
-        }else{
-            $citys =$this->model->orderby('name','asc')->select('id','name')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
+
+        $citys =$this->model->orderby('name','asc')->select('id','name');
+
+        if($request->search){
+            $citys = $citys->where('name', 'like', '%' .$search . '%');
         }
+
+        if($request->province_id){
+            $citys = $citys->where('province_id',$province_id);
+        }
+
+        $citys = $citys->limit(10)->get();
 
         $response = array();
         foreach($citys as $r){

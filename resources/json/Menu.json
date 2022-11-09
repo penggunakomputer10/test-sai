@@ -66,6 +66,14 @@
         "submenu":[]
     },
     {
+        "name": "Faskes",
+        "permission_name":[],
+        "url":"/administrator/faskes",
+        "icon":"fas fa-hospital",
+        "urlselect": ["faskes"],
+        "submenu":[]
+    },
+    {
         "name": "General Setting",
         "permission_name":[],
         "url":"/administrator/setting/general",
