@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "578d88d4-8965-4996-ad23-027dad0b4554",
+		"name": "Test SAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22208297"
+	},
+	"item": [
+		{
+			"name": "getReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/report?length=10&start=0",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"report"
+					],
+					"query": [
+						{
+							"key": "length",
+							"value": "10"
+						},
+						{
+							"key": "start",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
