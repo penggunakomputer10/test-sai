@@ -27,6 +27,7 @@
                                 <tr>
                                     <th width="2">No</th>
                                     <th>Vaccine Name</th>
+                                    <th>Count</th>
                                     <th>Created At</th>
                                     <th width="150">Action</th>
                                 </tr>
@@ -56,7 +57,7 @@
 var datatable = $('#table').DataTable({
     "processing": true,
     "serverSide": true,
-    "order": [[ 2, "DESC" ]],
+    "order": [[ 3, "DESC" ]],
     "ajax":{
                 "url": "{{ route('vaccine.table') }}",
                 "dataType": "json",
@@ -67,12 +68,14 @@ var datatable = $('#table').DataTable({
         { "data": "angka" },
 
         { "data": "name" },
+        { "data": "count" },
+
         { "data": "created_at" },
 
         { "data": "action" }
     ],
     "columnDefs": [ {
-        "targets": [0,3],
+        "targets": [0,2,4],
         "orderable": false
     }]
 

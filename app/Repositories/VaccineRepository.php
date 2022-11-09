@@ -49,7 +49,8 @@ class VaccineRepository implements BaseRepositoryInterface{
         $columns = array(
             0 =>'id',
             1 =>'name',
-            2 => 'created_at'
+            2 =>'count',
+            3 => 'created_at'
         );
 
         $totalData = $this->model->count();
@@ -90,6 +91,7 @@ class VaccineRepository implements BaseRepositoryInterface{
                 $nestedData['angka'] = $angka;
                 $nestedData['id'] = $u->id;
                 $nestedData['name'] = $u->name;
+                $nestedData['count'] = $u->faskes->sum('quota');
                 $nestedData['created_at'] = Carbon::parse($u->created_at)->format('Y-m-d H:i:s');
                 $nestedData['action'] = $edit." ".$delete;
                 $data[] = $nestedData;
