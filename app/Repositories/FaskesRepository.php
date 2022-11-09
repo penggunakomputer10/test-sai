@@ -120,10 +120,11 @@ class FaskesRepository implements BaseRepositoryInterface{
         $columns = array(
             0 =>'id',
             1 =>'name',
-            2 =>'address',
-            3 =>'province_id',
-            4 =>'city_id',
-            5 => 'created_at'
+            2 => 'type',
+            3 =>'address',
+            4 =>'province_id',
+            5 =>'city_id',
+            6 => 'created_at'
         );
 
         $totalData = $this->model->count();
@@ -164,6 +165,8 @@ class FaskesRepository implements BaseRepositoryInterface{
                 $nestedData['angka'] = $angka;
                 $nestedData['id'] = $u->id;
                 $nestedData['name'] = $u->name;
+                $nestedData['type'] = $u->type;
+
                 $nestedData['address'] = $u->address;
 
                 $nestedData['province_id'] = @$u->province->name;

@@ -27,6 +27,7 @@
                                 <tr>
                                     <th width="2">No</th>
                                     <th>Name</th>
+                                    <th>Type</th>
                                     <th>Address</th>
                                     <th>Province</th>
                                     <th>City</th>
@@ -70,6 +71,8 @@ var datatable = $('#table').DataTable({
         { "data": "angka" },
 
         { "data": "name" },
+        { "data": "type" },
+
         { "data": "address" },
 
         { "data": "province_id" },
@@ -80,7 +83,7 @@ var datatable = $('#table').DataTable({
         { "data": "action" }
     ],
     "columnDefs": [ {
-        "targets": [0,3,4,6],
+        "targets": [0,4,5,7],
         "orderable": false
     }]
 
